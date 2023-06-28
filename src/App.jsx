@@ -12,6 +12,7 @@ function App() {
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
   const [gastos, setGastos] = useState([]);
+ 
 
   const handleNuevoGasto = () => {
     setModal(true);
@@ -29,8 +30,9 @@ function App() {
 
   return (
   
-      <div className={modal && 'fijar' }>
+      <div className={modal ? 'fijar' : ''}>
         <Header
+          gastos={gastos}
           presupuesto={presupuesto}
           setPresupuesto={setPresupuesto}
           presupuestoVali={presupuestoVali}
