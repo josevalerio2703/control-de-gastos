@@ -16,25 +16,40 @@ function App() {
 
   useEffect(() => {
     if (Object.keys(gastoEditar).length > 0) {
-      handleNuevoGasto()
+      setModal(true);
+
+    setTimeout(() => {
+      setAnimarModal(true);
+    }, 500);
     }
+    
     
   }, [gastoEditar])
   
  
 
   const handleNuevoGasto = () => {
+    setGastoEditar({})
     setModal(true);
 
     setTimeout(() => {
       setAnimarModal(true);
     }, 500);
+    
   };
 
   const guardarGastos = (gasto) => {
+    if(gasto.id){
+    //actualizar
+    const actualizarGasto = gastos.map(ele => ele.id === gasto.id ? gasto : ele )
+    setGastos(actualizarGasto)
+    }else {
+    // crear un nuevo gasto
     gasto.id = generarId();
     gasto.fecha = Date.now()
     setGastos([...gastos, gasto]);
+    }
+    
   };
 
   return (
@@ -68,7 +83,8 @@ function App() {
           animarModal={animarModal}
           setAnimarModal={setAnimarModal}
           guardarGastos={guardarGastos}
-        
+          gastoEditar={gastoEditar}
+          setGastoEditar={setGastoEditar}
         />
       )}
       </div>
