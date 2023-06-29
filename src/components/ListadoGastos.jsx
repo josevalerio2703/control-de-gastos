@@ -13,7 +13,9 @@ const ListadoGastos = ({
       {filtros ? (
         <>
           <h2>
-            {gastosFiltrado.length > 0 ? "Gastos" : "No Hay Gastos con Esa Categoria"}
+            {gastosFiltrado.length > 0
+              ? "Gastos"
+              : "No Hay Gastos con Esa Categoria"}
           </h2>
           {gastosFiltrado.map((ele) => (
             <Gasto
