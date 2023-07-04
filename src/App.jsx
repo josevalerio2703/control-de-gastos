@@ -5,6 +5,7 @@ import ListadoGastos from "./components/ListadoGastos";
 import { generarId } from "./helpers";
 import IconGasto from "./img/nuevo-gasto.svg";
 import Filtros from "./components/Filtros";
+import MapComponent from "./assets/MapComponent";
 
 function App() {
   const [presupuesto, setPresupuesto] = useState(
@@ -128,6 +129,8 @@ function App() {
         />
       )}
     </div>
+
+   
   );
 }
 
