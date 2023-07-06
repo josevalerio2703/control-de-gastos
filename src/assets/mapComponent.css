@@ -1,0 +1,230 @@
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 100vw;
+    max-width: 1500px;
+
+  
+    /* padding: 20px; */
+    margin: auto;
+  }
+  
+  
+  .image-hotspot {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-hotspot img {
+    max-width: 100%;
+    width:fit-content;
+    height: 50%;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 3px #fff;
+    background: #02fc172f;
+    cursor: pointer;
+  }
+  
+  .icon::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(1, 1);
+    pointer-events: none;
+    content: "";
+    display: block;
+    width: 26.4px;
+    height: 26.4px;
+    border-radius: 100%;
+    border: 4px solid #09a509;
+    transition: border-color 1s linear;
+    animation: icon-pulse 2s linear infinite;
+  }
+  
+  @keyframes icon-pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(1, 1);
+      opacity: 0;
+    }
+  
+    20% {
+      transform: translate(-50%, -50%) scale(1.5, 1.5);
+      opacity: 0.9;
+    }
+  
+    50% {
+      transform: translate(-50%, -50%) scale(2, 2);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translate(-50%, -50%) scale(2, 2);
+      opacity: 0;
+    }
+  }
+  
+  .item {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tooltip {
+    position: absolute;
+    padding: 15px;
+    width: 20em;
+    height: 7em;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s linear;
+  }
+  
+  .tooltip h3 {
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .tooltip p {
+      margin-bottom: 10px;
+      padding-left: 20px;
+    }
+  
+  .top .tooltip {
+    left: calc(50%-6.5em);
+    top: 40px;
+    margin-top: -260px;
+    margin-left: -10px;
+  }
+  
+  .bottom .tooltip {
+    left: calc(50%-6.5em);
+    top: 40px;
+    margin-top: 110px;
+    margin-left: -160px;
+    
+  }
+  
+  .left .tooltip {
+    bottom: calc(50%- 3.5em);
+    right: 40px;
+    margin-top: 80px;
+    margin-right: -340px;
+   
+  }
+  
+  .right .tooltip {
+    left: calc(50%-6.5em);
+    top: 40px;
+    margin-top: 80px;
+    margin-left: 10px;
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* techo */
+    .top .tooltip {
+        left: calc(50%-6.5em);
+        top: 40px;
+        margin-top: -200px;
+        margin-left: -130px;
+      }
+      /* ups */
+      .bottom .tooltip {
+        left: calc(50%-6.5em);
+        top: 40px;
+        margin-top: 10px;
+        margin-left: -130px;
+        
+      }
+      /* carro */
+      .left .tooltip {
+        bottom: calc(50%- 3.5em);
+        right: 40px;        
+        margin-top: 20px;
+        margin-right: -100px;
+        
+       
+      }
+      /* bateria */
+    .right .tooltip {
+        left: calc(50%-6.5em);
+        top: 40px;
+        margin-top: 0px;
+        margin-left: -130px;
+       
+      }
+
+   
+  }
+  
+  .tooltip.show {
+    height: auto;
+    opacity: 1;
+  }
+  
+  .line-animation {
+    
+    position: absolute;
+    display: block;
+    background-color: #179126;
+    width: 2px;
+    height: 0;
+    transition: height 0.5s ease-in-out;
+    transform: translateX(-50%);
+  }
+  .tooltip.show .line-animation {
+    height: calc(100% - 45px);
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* .icon {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .icon::after {
+    width: 6.6vw;
+    height: 6.6vw;
+    border-width: 0.8vw;
+  }
+
+  .tooltip {
+    padding: 3vw;
+    width: 100vw;
+    height: 100vw;
+  } */
